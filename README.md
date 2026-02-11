@@ -1,2 +1,0 @@
-# GES-OFICIAL
-Pijamas GES

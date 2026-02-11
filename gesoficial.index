@@ -1,0 +1,489 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..308fde252e04a872682ab1a1346cc8dfb1f2c882
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,132 @@
++<!DOCTYPE html>
++<html lang="es">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <title>LunaSuave | Pijamas con estilo</title>
++    <link rel="preconnect" href="https://fonts.googleapis.com" />
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++    <link
++      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
++      rel="stylesheet"
++    />
++    <link rel="stylesheet" href="styles.css" />
++  </head>
++  <body>
++    <div class="topbar">
++      <p>🚚 Envío gratis por compras superiores a $160.000 | 💫 Nueva colección Sleep Chic</p>
++    </div>
++
++    <header class="header">
++      <a href="#" class="logo">Luna<span>Suave</span></a>
++      <nav>
++        <a href="#coleccion">Colección</a>
++        <a href="#destacados">Destacados</a>
++        <a href="#beneficios">Beneficios</a>
++        <a href="#newsletter">Newsletter</a>
++      </nav>
++      <button class="cta-header">Comprar ahora</button>
++    </header>
++
++    <main>
++      <section class="hero" id="coleccion">
++        <div class="hero-content">
++          <p class="eyebrow">NUEVA TEMPORADA</p>
++          <h1>Pijamas que se sienten <span>tan bien</span> como se ven</h1>
++          <p>
++            Diseños inspirados en la energía urbana y el confort premium. Para dormir, para descansar
++            y para verte increíble en casa.
++          </p>
++          <div class="hero-actions">
++            <a href="#destacados" class="btn btn-primary">Ver colección</a>
++            <a href="#beneficios" class="btn btn-secondary">Conoce más</a>
++          </div>
++        </div>
++        <div class="hero-card">
++          <h3>Sleep Set “Aurora”</h3>
++          <p>Top satinado + pantalón wide leg</p>
++          <div class="price">$129.900</div>
++          <span class="tag">BEST SELLER</span>
++        </div>
++      </section>
++
++      <section class="categories">
++        <article>
++          <h4>Satin Dream</h4>
++          <p>Acabado suave, look sofisticado.</p>
++        </article>
++        <article>
++          <h4>Cotton Essentials</h4>
++          <p>Básicos cómodos para todos los días.</p>
++        </article>
++        <article>
++          <h4>Match Sets</h4>
++          <p>Conjuntos combinados para regalar.</p>
++        </article>
++      </section>
++
++      <section class="products" id="destacados">
++        <div class="section-title">
++          <p>DESTACADOS</p>
++          <h2>Looks para noches con estilo</h2>
++        </div>
++        <div class="grid">
++          <article class="product-card">
++            <div class="product-image grad-1"></div>
++            <h3>Pijama Velvet Sky</h3>
++            <p>Textura ligera + fit relajado</p>
++            <strong>$99.900</strong>
++          </article>
++          <article class="product-card">
++            <div class="product-image grad-2"></div>
++            <h3>Pijama Silk Mood</h3>
++            <p>Toque satinado, caída fluida</p>
++            <strong>$139.900</strong>
++          </article>
++          <article class="product-card">
++            <div class="product-image grad-3"></div>
++            <h3>Pijama Cozy Lines</h3>
++            <p>Algodón premium con diseño rayado</p>
++            <strong>$109.900</strong>
++          </article>
++          <article class="product-card">
++            <div class="product-image grad-4"></div>
++            <h3>Pijama Glow Night</h3>
++            <p>Color statement para tu rutina PM</p>
++            <strong>$119.900</strong>
++          </article>
++        </div>
++      </section>
++
++      <section class="benefits" id="beneficios">
++        <article>
++          <h3>Calidad premium</h3>
++          <p>Telas suaves, transpirables y con excelente durabilidad.</p>
++        </article>
++        <article>
++          <h3>Diseño en tendencia</h3>
++          <p>Inspirado en moda urbana, colores limpios y siluetas modernas.</p>
++        </article>
++        <article>
++          <h3>Compra fácil y segura</h3>
++          <p>Paga en línea, recibe rápido y cambia sin complicaciones.</p>
++        </article>
++      </section>
++
++      <section class="newsletter" id="newsletter">
++        <h2>Únete al club LunaSuave</h2>
++        <p>Recibe 10% OFF en tu primera compra y acceso anticipado a lanzamientos.</p>
++        <form>
++          <input type="email" placeholder="Tu correo electrónico" required />
++          <button type="submit">Suscribirme</button>
++        </form>
++      </section>
++    </main>
++
++    <footer>
++      <p>© <span id="year"></span> LunaSuave. Todos los derechos reservados.</p>
++    </footer>
++
++    <script src="script.js"></script>
++  </body>
++</html>
+diff --git a/script.js b/script.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..ee9417281bd1dd7439f23bd13d1cb7a65a39e1fb
+--- /dev/null
++++ b/script.js
+@@ -0,0 +1 @@
++document.getElementById("year").textContent = new Date().getFullYear();
+diff --git a/styles.css b/styles.css
+new file mode 100644
+index 0000000000000000000000000000000000000000..d11021b27a8939458e9ded4125bde982e5166d47
+--- /dev/null
++++ b/styles.css
+@@ -0,0 +1,334 @@
++:root {
++  --bg: #f7f4ff;
++  --card: #ffffff;
++  --text: #1c1930;
++  --muted: #6f6b85;
++  --primary: #5f38f5;
++  --secondary: #ed60a9;
++  --accent: #14c8b0;
++  --shadow: 0 16px 40px rgba(33, 20, 95, 0.14);
++}
++
++* {
++  box-sizing: border-box;
++  margin: 0;
++  padding: 0;
++}
++
++body {
++  font-family: "Montserrat", sans-serif;
++  color: var(--text);
++  background: radial-gradient(circle at 100% 0%, #efe8ff 0%, #f9f7ff 30%, #ffffff 100%);
++}
++
++a {
++  text-decoration: none;
++  color: inherit;
++}
++
++.topbar {
++  background: var(--text);
++  color: white;
++  text-align: center;
++  padding: 0.65rem;
++  font-size: 0.85rem;
++}
++
++.header {
++  max-width: 1140px;
++  margin: 0 auto;
++  padding: 1.15rem 1rem;
++  display: flex;
++  align-items: center;
++  justify-content: space-between;
++  gap: 1rem;
++}
++
++.logo {
++  font-weight: 800;
++  font-size: 1.4rem;
++  letter-spacing: -0.5px;
++}
++
++.logo span {
++  color: var(--primary);
++}
++
++.header nav {
++  display: flex;
++  gap: 1.2rem;
++  font-weight: 600;
++  color: #3d3960;
++  font-size: 0.93rem;
++}
++
++.cta-header {
++  border: none;
++  background: linear-gradient(95deg, var(--primary), #7b52ff);
++  color: white;
++  padding: 0.65rem 1rem;
++  border-radius: 999px;
++  font-weight: 700;
++  cursor: pointer;
++}
++
++main {
++  max-width: 1140px;
++  margin: 0 auto;
++  padding: 0 1rem 3rem;
++}
++
++.hero {
++  margin-top: 0.8rem;
++  padding: 3rem;
++  border-radius: 24px;
++  background: linear-gradient(135deg, #2a1f68 0%, #5f38f5 55%, #ed60a9 100%);
++  color: white;
++  display: grid;
++  gap: 1.2rem;
++  grid-template-columns: 1fr 290px;
++  align-items: center;
++  box-shadow: var(--shadow);
++}
++
++.eyebrow {
++  font-weight: 700;
++  font-size: 0.82rem;
++  opacity: 0.9;
++}
++
++.hero h1 {
++  font-size: clamp(2rem, 4vw, 3rem);
++  line-height: 1.1;
++  margin: 0.8rem 0;
++}
++
++.hero h1 span {
++  color: #b5fff5;
++}
++
++.hero p {
++  max-width: 55ch;
++  opacity: 0.95;
++}
++
++.hero-actions {
++  margin-top: 1.4rem;
++  display: flex;
++  gap: 0.8rem;
++}
++
++.btn {
++  padding: 0.8rem 1.2rem;
++  border-radius: 999px;
++  font-weight: 700;
++  font-size: 0.95rem;
++}
++
++.btn-primary {
++  background: white;
++  color: #312181;
++}
++
++.btn-secondary {
++  border: 1.5px solid rgba(255, 255, 255, 0.8);
++}
++
++.hero-card {
++  background: rgba(255, 255, 255, 0.16);
++  border: 1px solid rgba(255, 255, 255, 0.25);
++  border-radius: 18px;
++  padding: 1.2rem;
++  backdrop-filter: blur(5px);
++}
++
++.hero-card h3 {
++  font-size: 1.2rem;
++}
++
++.hero-card p {
++  font-size: 0.9rem;
++  margin: 0.45rem 0 0.75rem;
++}
++
++.price {
++  font-size: 1.4rem;
++  font-weight: 800;
++}
++
++.tag {
++  display: inline-block;
++  margin-top: 0.65rem;
++  font-size: 0.76rem;
++  padding: 0.3rem 0.65rem;
++  border-radius: 999px;
++  background: #b5fff5;
++  color: #093f44;
++  font-weight: 700;
++}
++
++.categories,
++.benefits {
++  margin: 2rem 0;
++  display: grid;
++  gap: 1rem;
++  grid-template-columns: repeat(3, 1fr);
++}
++
++.categories article,
++.benefits article {
++  background: var(--card);
++  border-radius: 16px;
++  padding: 1.2rem;
++  box-shadow: 0 8px 24px rgba(35, 25, 99, 0.08);
++}
++
++.categories h4,
++.benefits h3 {
++  margin-bottom: 0.4rem;
++}
++
++.categories p,
++.benefits p,
++.section-title p {
++  color: var(--muted);
++}
++
++.section-title {
++  margin: 3rem 0 1.2rem;
++}
++
++.section-title p {
++  font-weight: 700;
++  letter-spacing: 1.2px;
++  font-size: 0.8rem;
++}
++
++.section-title h2 {
++  margin-top: 0.4rem;
++  font-size: clamp(1.4rem, 2.8vw, 2rem);
++}
++
++.grid {
++  display: grid;
++  grid-template-columns: repeat(4, minmax(180px, 1fr));
++  gap: 1rem;
++}
++
++.product-card {
++  background: white;
++  border-radius: 16px;
++  padding: 0.9rem;
++  box-shadow: 0 8px 24px rgba(38, 29, 105, 0.08);
++}
++
++.product-image {
++  width: 100%;
++  aspect-ratio: 3 / 4;
++  border-radius: 12px;
++  margin-bottom: 0.8rem;
++}
++
++.grad-1 {
++  background: linear-gradient(135deg, #8967ff, #e9d8ff);
++}
++
++.grad-2 {
++  background: linear-gradient(135deg, #ff7cb5, #ffd8ea);
++}
++
++.grad-3 {
++  background: linear-gradient(135deg, #57d9ca, #d8fff9);
++}
++
++.grad-4 {
++  background: linear-gradient(135deg, #4f4f7d, #cdcdff);
++}
++
++.product-card h3 {
++  font-size: 1rem;
++}
++
++.product-card p {
++  margin: 0.35rem 0;
++  color: var(--muted);
++  font-size: 0.9rem;
++}
++
++.newsletter {
++  margin-top: 3rem;
++  padding: 2rem;
++  border-radius: 20px;
++  background: linear-gradient(120deg, #21145f, #5f38f5);
++  color: white;
++  text-align: center;
++}
++
++.newsletter p {
++  margin: 0.55rem auto 1rem;
++  max-width: 60ch;
++  opacity: 0.92;
++}
++
++.newsletter form {
++  display: flex;
++  justify-content: center;
++  gap: 0.7rem;
++  flex-wrap: wrap;
++}
++
++.newsletter input {
++  min-width: 260px;
++  border-radius: 999px;
++  border: none;
++  padding: 0.75rem 1rem;
++}
++
++.newsletter button {
++  border: none;
++  border-radius: 999px;
++  padding: 0.75rem 1.1rem;
++  font-weight: 700;
++  background: #b5fff5;
++  color: #0e3f46;
++}
++
++footer {
++  text-align: center;
++  padding: 1.6rem 1rem 2rem;
++  color: #7c7797;
++  font-size: 0.9rem;
++}
++
++@media (max-width: 980px) {
++  .header nav {
++    display: none;
++  }
++
++  .hero {
++    grid-template-columns: 1fr;
++    padding: 2rem;
++  }
++
++  .grid {
++    grid-template-columns: repeat(2, minmax(170px, 1fr));
++  }
++}
++
++@media (max-width: 680px) {
++  .categories,
++  .benefits,
++  .grid {
++    grid-template-columns: 1fr;
++  }
++
++  .hero-actions {
++    flex-direction: column;
++    align-items: flex-start;
++  }
++
++  .btn {
++    width: 100%;
++    text-align: center;
++  }
++}
+ 
+EOF
+)
